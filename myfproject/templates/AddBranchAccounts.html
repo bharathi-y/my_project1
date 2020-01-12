@@ -1,0 +1,12 @@
+{% extends 'home_page.html' %}
+{% block body %}
+<div class="container">
+    <form class="form" method="post">
+        <table class="table table-boardered">
+            {% csrf_token %}
+            {{ addBA }}
+        </table>
+        <input type="submit" value="save" class ="btn btn-success">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "home_page.html" %}
+{% block body%}
+<h3>Company Projects Table</h3>
+<div class ="alert alert-info">All Data</div>
+<a href="{% url 'addproject'%}" class="btn btn-success">Add</a>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Sl No.</th>
+            <th>branch_name</th>
+            <th>totalemp_branch</th>
+            <th>number_projects</th>
+            <th>project_name</th>
+            <th>manager_name</th>
+            <th>emp_inproject</th>
+            <th>projectincome</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for allP in allP %}
+        <tr>
+            <td> {{ forloop.counter }}</td>
+            <td>{{ allP.branch_name }}</td>
+            <td>{{ allp.totalemp_branch }}</td>
+            <td>{{ allP.number_projects }}</td>
+            <td>{{ allP.project_name }}</td>
+            <td>{{ allP.manager_name }}</td>
+            <td>{{ allP.emp_inproject }}</td>
+            <td>{{ allP.projectincome }}</td>
+            <td><a href="{% url 'edproject' allP.id %}">Edit</a></td>
+            <td><a href="{% url 'dlproject' allP.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+branch_name=models.CharField(max_length=25)
+    totalemp_branch=models.IntegerField()
+    number_projects=models.IntegerField()
+    project_name=models.CharField(max_length=50)
+    manager_name=models.CharField(max_length=25)
+    emp_inproject=models.IntegerField()
+    projectincome=models.IntegerField()

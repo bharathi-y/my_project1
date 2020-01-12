@@ -1,20 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>signup</title>
-</head>
-<body>
+{% extends "home_page.html"%}
+{% block header %}
+<h1>Welcome to Lookup </h1>
+<ul>
+    <li><a href="{% url 'login_page'%}"><strong>Login</strong></a></li>
+</ul>
+{% endblock %}
+
+{% block body %}
+
     <h1>Register too LOOKUP</h1>
     <form>
         <p>username:<input type="text" placeholder="username"></p>
-        <p>set password:<input type="password" placeholder="********"></p>
+        <p>set password:<input type="password" placeholder="********"name="psame"></p>
         <p>confirme password:<input type="password" placeholder="********"name="psame"></p>
         <p>contact number:<input type="number"></p>
         <p>emailid:<input type="email" placeholder="bhjygu@doman.com"></p>
         <p><input type="submit" value="Rigester"></p>
 
     </form>
+{% endblock %}
 
-</body>
-</html>
+

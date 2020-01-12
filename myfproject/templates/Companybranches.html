@@ -1,0 +1,39 @@
+{% extends "home_page.html" %}
+{% block body%}
+<h3>Company Branch Table</h3>
+<div class ="alert alert-info">All Data</div>
+<a href="{% url 'addCompanybranches'%}" class="btn btn-success">Add</a>
+
+<table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Sl No</th>
+            <th>company_Lname</th>
+            <th>Manager_Name</th>
+            <th>branch_ConNo</th>
+            <th>branch_address</th>
+
+        </tr>
+        </thead>
+    <tbody>
+        {% for allCB in allCB %}
+    <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ allCB.company_Lname }}</td>
+            <td>{{ allCB.Manager_Name }}</td>
+            <td>{{ allCB.branch_ConNo }}</td>
+            <td>{{ allCB.branch_address }}</td>
+            <td><a href="{% url 'edCompanybranches' allCB.id %}">Edit</a></td>
+            <td><a href="{% url 'dlCompanybranches' allCB.id %}">Delete</a></td>
+
+
+    </tr>
+        {% endfor %}
+
+
+
+    </tbody>
+
+    </table>
+
+{% endblock %}

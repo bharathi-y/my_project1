@@ -1,16 +1,42 @@
 <!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>home</title>
+    <link rel="stylesheet" href="{% static 'bc/bc.css'%}">
+
 </head>
 <body>
-    <h1>Welcome to Lookup</h1>
+{% block header %}
+<h1>Welcome to Lookup </h1>
+<h2>User </h2>
+<ul>
 
-        <p><a href={% url 'signup_page'%}><strong>RegisterNow!</strong></a></p>
-        <p><a href={% url 'login_page'%}><strong>Login</strong></a></p>
+    <li><a href="{% url 'signup_page'%}"><strong>RegisterNow!</strong></a></li>
+    <li><a href="{% url 'login_page'%}"><strong>Login</strong></a></li>
+    <li><a href ="{% url 'Companybranches_page'%}"><strong>Companybranches</strong></a></li>
+    <li><a href ="{% url 'BranchAccounts_page'%}"><strong>BranchAccounts</strong></a></li>
+    <li><a href ="{% url 'EmployeDetails'%}"><strong>EmployeDetails</strong></a></li>
+    <li><a href ="{% url 'project'%}"><strong>project</strong></a></li>
 
+</ul>
+<h2>Slaff </h2>
+<ul>
 
+    <li><a href="{% url 'empsignup_page'%}"><strong>New Eemploee Registratiom!</strong></a></li>
+    <li><a href="{% url 'emplogin_page'%}"><strong>Staff Login</strong></a></li>
+</ul>
 
+{% endblock %}
+{% block body %}
+<h1>This is homepage</h1>
+{% endblock %}
+
+{% block footer %}
+<h1>hello</h1>
+{% endblock %}
 </body>
+
 </html>

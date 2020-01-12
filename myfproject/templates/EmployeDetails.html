@@ -1,0 +1,36 @@
+{% extends "home_page.html" %}
+{% block body%}
+<h3>Company Employee Detailes Table</h3>
+<div class ="alert alert-info">All Data</div>
+<a href="{% url 'addEmployeDetails'%}" class="btn btn-success">Add</a>
+<div class="container">
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Sl no</th>
+            <th>branch_name1</th>
+            <th>name_emp3</th>
+            <th>Yearofjoin4</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for allED in allED%}
+        <tr>
+            <td> {{ forloop.counter }}</td>
+            <td>{{ allED.branch_name }}</td>
+            <td>{{ allED.name_emp }}</td>
+            <td>{{ allED.Yearofjoin }}</td>
+            <td><a href="{% url 'edEmployeDetails' allCB.id %}">Edit</a></td>
+            <td><a href="{% url 'dlEmployeDetails' allCB.id %}">Delete</a></td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "home_page.html" %}
+{% block body%}
+<h3>BranchAccounts Table</h3>
+<div class ="alert alert-info">All Data</div>
+<a href="{% url 'addBranchAccounts' %}"class="btn btn-success">Add</a>
+<table class="table table_bordered">
+    <thead>
+    <tr>
+        <th> Sl No. </th>
+        <th> branch_name </th>
+        <th> Yearstart </th>
+        <th> yearsCompleted </th>
+        <th> Investment </th>
+        <th> total_profit </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for allBA in allBA %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ allBA.branch_name }}</td>
+        <td>{{ allBA.Yearstart }}</td>
+        <td>{{ allBA.yearsCompleted }}</td>
+        <td>{{ allBA.Investment }}</td>
+        <td>{{  allBA.total_profit }}</td>
+        <td><a href="{% url 'edBranchAccounts' allBA.id %}">Edit</a></td>
+        <td><a href="{% url 'dlBranchAccounts' allBA
+
+        .id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+
+
+{% endblock %}
